@@ -19,12 +19,12 @@
 ### swankr directory)
 swankrPath <- getwd() 
 
-swank <- function(port=4005) {
+swank <- function(port=4009) {
   acceptConnections(port, FALSE)
 }
 
 startSwank <- function(portFile) {
-  acceptConnections(4005, portFile)
+  acceptConnections(4009, portFile)
 }
 
 acceptConnections <- function(port, portFile) {
