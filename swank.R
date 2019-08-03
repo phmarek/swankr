@@ -491,6 +491,10 @@ computeRestartsForEmacs <- function (sldbState) {
   printToString(value)
 }
 
+`swank-backend:frame-call` <- function(slimeConnection, sldbState, string, index) {
+	list()
+}
+
 `swank:frame-locals-and-catch-tags` <- function(slimeConnection, sldbState, index) {
   frame <- sldbState$frames[[1+index]]
   objs <- ls(envir=frame)
