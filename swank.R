@@ -345,8 +345,7 @@ sendReplResultFunction <- sendReplResult
   for(expr in parse(text=string)) {
     expr <- expr
     ## O maybe this is even uglier
-    lookedup <- do.call("bquote", list(expr))
-    tmp <- withVisible(eval(lookedup, envir = globalenv()))
+    tmp <- withVisible(eval.parent(expr, 33))
     if(tmp$visible) {
       sendReplResultFunction(slimeConnection, tmp$value)
     }
